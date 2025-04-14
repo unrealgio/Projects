@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { ArrowRight, Star } from "lucide-react";
 
 const testimonials = [
@@ -42,21 +42,21 @@ const cardVariants = {
 
 const Testimonials = () => {
   return (
-    <section id="depoimentos" className="py-20 bg-[#000A26] px-6">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-white mb-4">
+    <section id="depoimentos" className="bg-[#000A26] px-6 py-20">
+      <div className="mx-auto max-w-7xl text-center">
+        <h2 className="mb-4 text-3xl font-bold text-white">
           Depoimentos de quem já deu o Boost no Digital!
         </h2>
-        <p className="text-white mb-12 max-w-2xl mx-auto">
+        <p className="mx-auto mb-12 max-w-2xl text-white">
           Depoimentos reais de pessoas e empresas que confiaram na Digital
           Boost.
         </p>
 
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-20">
+        <div className="mb-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300"
+              className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl"
               custom={index}
               initial="hidden"
               whileInView="visible"
@@ -64,22 +64,17 @@ const Testimonials = () => {
               variants={cardVariants}
             >
               {/* Estrelas no topo */}
-              <div className="flex gap-1 text-yellow-400 mb-3">
+              <div className="mb-3 flex gap-1 text-yellow-400">
                 {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={18}
-                    fill="currentColor"
-                    strokeWidth={0}
-                  />
+                  <Star key={i} size={18} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
 
-              <div className="flex items-center gap-4 mb-4">
+              <div className="mb-4 flex items-center gap-4">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-14 h-14 rounded-full object-cover"
+                  className="h-14 w-14 rounded-full object-cover"
                 />
                 <div className="text-left">
                   <p className="font-semibold text-gray-800">
@@ -89,7 +84,7 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              <p className="text-gray-600 text-sm italic">
+              <p className="text-sm text-gray-600 italic">
                 {testimonial.comment}
               </p>
             </motion.div>
@@ -97,20 +92,20 @@ const Testimonials = () => {
         </div>
 
         {/* Seção CTA inspirada no Figma */}
-        <div className="bg-[#001437] rounded-2xl text-white px-6 py-12 flex flex-col lg:flex-row justify-between items-center gap-8 max-w-6xl mx-auto">
-          <h3 className="text-4xl font-extrabold leading-tight text-center  lg:text-left">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 rounded-2xl bg-[#001437] px-6 py-12 text-white lg:flex-row">
+          <h3 className="text-center text-4xl leading-tight font-extrabold lg:text-left">
             O Boost que você <br /> precisa no digital
           </h3>
 
-          <div className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left">
-            <p className="text-sm max-w-md">
+          <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+            <p className="max-w-md text-sm">
               Explore no digital hoje, com a Digital Boost: A revolução nos
               ganhos de seu negócio, transforme sua experiência em um clique!
             </p>
 
-            <button className="flex items-center gap-2 text-white font-semibold font-inter hover:underline transition-all">
-              <ArrowRight className="text-blue-500 bg-white rounded-full w-7 h-7 p-1" />
-              <Link to='/contato'>Saiba mais!</Link>
+            <button className="font-inter flex items-center gap-2 font-semibold text-white transition-all hover:underline">
+              <ArrowRight className="h-7 w-7 rounded-full bg-white p-1 text-blue-500" />
+              <Link to="/contato">Saiba mais!</Link>
             </button>
           </div>
         </div>

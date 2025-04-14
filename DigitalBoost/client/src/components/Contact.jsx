@@ -22,29 +22,29 @@ const Contact = () => {
   return (
     <motion.section
       id="contato"
-      className="py-20 bg-white px-6"
+      className="bg-white px-6 py-20"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
       <motion.div
-        className="max-w-3xl mx-auto text-center"
+        className="mx-auto max-w-3xl text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+        <h2 className="mb-4 text-3xl font-bold text-gray-800">
           Entre em Contato
         </h2>
-        <p className="text-gray-500 mb-12">
+        <p className="mb-12 text-gray-500">
           Preencha o formulário abaixo e retornaremos em breve.
         </p>
 
         {status === "success" && (
           <motion.p
-            className="mb-6 text-green-600 font-medium"
+            className="mb-6 font-medium text-green-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -54,7 +54,7 @@ const Contact = () => {
 
         {status === "error" && (
           <motion.p
-            className="mb-6 text-red-600 font-medium"
+            className="mb-6 font-medium text-red-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -65,7 +65,7 @@ const Contact = () => {
         <motion.form
           onSubmit={handleSubmit}
           className={`grid gap-6 text-left ${
-            status === "success" ? "opacity-70 pointer-events-none" : ""
+            status === "success" ? "pointer-events-none opacity-70" : ""
           }`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ const Contact = () => {
                   value={form[field]}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-all"
+                  className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm transition-all focus:border-blue-500 focus:ring-blue-500"
                 />
               ) : (
                 <input
@@ -108,7 +108,7 @@ const Contact = () => {
                   value={form[field]}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-all"
+                  className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm transition-all focus:border-blue-500 focus:ring-blue-500"
                 />
               )}
             </motion.div>
@@ -116,7 +116,7 @@ const Contact = () => {
 
           <motion.button
             type="submit"
-            className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition duration-300"
+            className="w-full rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-blue-700"
             disabled={status === "loading"}
             whileTap={{ scale: 0.97 }}
           >

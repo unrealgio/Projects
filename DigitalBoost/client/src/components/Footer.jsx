@@ -3,12 +3,12 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-700 py-10 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
+    <footer className="bg-gray-100 px-6 py-10 text-gray-700">
+      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row">
         {/* Logo + Descrição */}
         <div className="flex-1">
           <h2 className="text-2xl font-bold text-blue-600">Digital Boost</h2>
-          <p className="mt-2 text-sm max-w-sm">
+          <p className="mt-2 max-w-sm text-sm">
             Impulsionando empresas no mundo digital com soluções inteligentes e
             personalizadas.
           </p>
@@ -16,20 +16,20 @@ const Footer = () => {
 
         {/* Links rápidos */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Links Rápidos</h3>
+          <h3 className="mb-3 text-lg font-semibold">Links Rápidos</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#servicos" className="hover:text-blue-600 transition">
+              <a href="#servicos" className="transition hover:text-blue-600">
                 Serviços
               </a>
             </li>
             <li>
-              <a href="#depoimentos" className="hover:text-blue-600 transition">
+              <a href="#depoimentos" className="transition hover:text-blue-600">
                 Depoimentos
               </a>
             </li>
             <li>
-              <a href="#contato" className="hover:text-blue-600 transition">
+              <a href="#contato" className="transition hover:text-blue-600">
                 Contato
               </a>
             </li>
@@ -38,26 +38,26 @@ const Footer = () => {
 
         {/* Redes sociais */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Siga-nos</h3>
+          <h3 className="mb-3 text-lg font-semibold">Siga-nos</h3>
           <div className="flex gap-4">
             <a
               href="https://web.facebook.com/giozzzz1"
               aria-label="Facebook"
-              className="hover:text-blue-600 transition"
+              className="transition hover:text-blue-600"
             >
               <Facebook size={20} />
             </a>
             <a
               href="https://www.instagram.com/odigitalboost/"
               aria-label="Instagram"
-              className="hover:text-pink-500 transition"
+              className="transition hover:text-pink-500"
             >
               <Instagram size={20} />
             </a>
             <a
               href="https://www.linkedin.com/in/giovanni-felipe-dev/"
               aria-label="LinkedIn"
-              className="hover:text-blue-500 transition"
+              className="transition hover:text-blue-500"
             >
               <Linkedin size={20} />
             </a>
@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
 
       {/* Linha final */}
-      <div className="text-center text-xs text-gray-500 mt-8">
+      <div className="mt-8 text-center text-xs text-gray-500">
         © {new Date().getFullYear()} Digital Boost. Todos os direitos
         reservados.
       </div>

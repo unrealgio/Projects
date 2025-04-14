@@ -5,20 +5,18 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import Introduction from "../components/Introduction";
-import Offer from '../components/Offer'
-import Marquee from "../components/Marquee";
+import Offer from "../components/Offer";
+import About from "../components/About";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <div>
       <Introduction />
-      <Marquee />
-      </div>
       <Production />
-      <Offer />
+      <About />
       <Services />
+      <Offer />
       <Testimonials />
       <Footer />
     </>

@@ -3,6 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,83 +11,78 @@ const Navbar = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="bg-white shadow-md fixed w-full z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
+    <header className="fixed z-50 w-full bg-white shadow-md">
+      {/* WhatsApp icon */}
+      <a
+        href="https://wa.me/558481734763"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed right-6 bottom-6 z-50 flex items-center justify-center gap-1 rounded-full bg-green-500 px-3 py-3 text-center font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-green-600"
+      >
+        <FaWhatsapp className="text-2xl" />
+        Quero vender mais agora!
+      </a>
+
+      <nav className="max-w-8xl relative mx-auto flex h-[80px] items-center justify-center px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <RouterLink to="/" className="text-2xl font-bold text-blue-600">
-          Digital Boost
+        <RouterLink
+          to="/"
+          className="absolute left-5 flex items-center text-2xl font-bold text-blue-600"
+        >
+          <img className="w-12" src="/img/logo.png" alt="Logo Digital Boost" />
+          <span className="p-2 font-bold">Digital Boost</span>
         </RouterLink>
 
-        {/* Links desktop */}
-        <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <li>
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="hover:text-blue-600 relative group cursor-pointer"
-            >
-              Home
-              <span className="block h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink
-              to="servicos"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="hover:text-blue-600 relative group cursor-pointer"
-            >
-              Serviços
-              <span className="block h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink
-              to="depoimentos"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="hover:text-blue-600 relative group cursor-pointer"
-            >
-              Depoimentos
-              <span className="block h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </ScrollLink>
-          </li>
-          <li>
-            <RouterLink
-              to="/contato"
-              className="hover:text-blue-600 relative group cursor-pointer"
-            >
-              Contato
-              <span className="block h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </RouterLink>
-          </li>
+        {/* Menu centralizado */}
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 space-x-10 font-medium text-gray-700 md:flex">
+          {[
+            { to: "home", label: "Início" },
+            { to: "ecommerce", label: "Por que E-commerce?" },
+            { to: "sobre", label: "Quem Somos" },
+            { to: "servicos", label: "Serviços" },
+            { to: "solucao", label: "Solução Boost" },
+            { to: "depoimentos", label: "Depoimentos" },
+          ].map((item) => (
+            <li key={item.to}>
+              <ScrollLink
+                to={item.to}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="group relative cursor-pointer hover:text-[#febd00]"
+              >
+                {item.label}
+                <span className="block h-0.5 origin-left scale-x-0 bg-[#febd00] transition-transform group-hover:scale-x-100" />
+              </ScrollLink>
+            </li>
+          ))}
         </ul>
 
-        {/* Botão desktop */}
-        <ScrollLink
-          to="contato"
-          smooth={true}
-          duration={500}
-          offset={-80}
-          className="hidden md:inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer"
+        {/* Botão "Fale com a gente" */}
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="absolute right-5 hidden md:flex"
         >
-          Comece Agora!
-        </ScrollLink>
+          <RouterLink
+            to="/contato"
+            className="inline-block rounded-lg bg-blue-600 px-4 py-2 text-white shadow-md transition-colors hover:bg-blue-700"
+          >
+            Fale com a Gente
+          </RouterLink>
+        </motion.div>
 
-        {/* Ícone mobile */}
+        {/* Botão mobile menu */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-gray-700 transition duration-300"
+          className="absolute right-4 text-gray-700 transition duration-300 md:hidden"
           aria-label="Menu"
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Menu Mobile com animação */}
+        {/* Menu mobile */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -94,61 +90,46 @@ const Navbar = () => {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-full left-0 w-full bg-white shadow-md md:hidden overflow-hidden z-40"
+              className="absolute top-full left-0 z-40 w-full overflow-hidden bg-white shadow-md md:hidden"
             >
-              <ul className="flex flex-col p-4 space-y-3 text-gray-700 font-medium">
+              <ul className="flex flex-col space-y-3 p-4 font-medium text-gray-700">
+                {[
+                  { to: "home", label: "Início" },
+                  { to: "ecommerce", label: "Por que E-commerce" },
+                  { to: "servicos", label: "Serviços" },
+                  { to: "solucao", label: "Solução Boost" },
+                  { to: "sobre", label: "Quem Somos" },
+                  { to: "duvidas", label: "Dúvidas" },
+                  { to: "depoimentos", label: "Depoimentos" },
+                ].map((item) => (
+                  <li key={item.to}>
+                    <ScrollLink
+                      to={item.to}
+                      smooth={true}
+                      duration={500}
+                      offset={-80}
+                      className="cursor-pointer"
+                      onClick={closeMenu}
+                    >
+                      {item.label}
+                    </ScrollLink>
+                  </li>
+                ))}
+
                 <li>
-                  <ScrollLink
-                    to="top"
-                    smooth={true}
-                    duration={500}
-                    offset={+80}
-                    className="cursor-pointer"
-                    onClick={closeMenu}
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    Home
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    to="servicos"
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    className="cursor-pointer"
-                    onClick={closeMenu}
-                  >
-                    Serviços
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    to="depoimentos"
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    className="cursor-pointer"
-                    onClick={closeMenu}
-                  >
-                    Depoimentos
-                  </ScrollLink>
-                </li>
-                <li>
-                  <RouterLink to="/contato" onClick={closeMenu}>
-                    Contato
-                  </RouterLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    to="contato"
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition block text-center cursor-pointer"
-                    onClick={closeMenu}
-                  >
-                    Comece Agora
-                  </ScrollLink>
+                    <RouterLink
+                      to="/contato"
+                      onClick={closeMenu}
+                      className="block rounded-lg bg-blue-600 px-4 py-2 text-center text-white shadow-md transition hover:bg-blue-700"
+                    >
+                      Fale com a Gente
+                    </RouterLink>
+                  </motion.div>
                 </li>
               </ul>
             </motion.div>
