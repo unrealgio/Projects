@@ -22,14 +22,14 @@ const Introduction = () => {
             oportunidades escaparem. Posicione-se no ambiente digital agora!
           </p>
           <Link to="/contato">
-            <button className="mt-6 w-full rounded-lg bg-[#7CA6FF] px-6 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-[#FEBD00] sm:w-auto sm:px-8 sm:py-4 sm:text-2xl">
+            <button className="mt-6 w-full cursor-pointer rounded-lg bg-[#7CA6FF] px-6 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-[#FEBD00] sm:w-auto sm:px-8 sm:py-4 sm:text-2xl">
               Dê o Boost!
             </button>
           </Link>
         </div>
 
-        {/* Vídeo */}
-        <div className="relative mx-auto  h-[650px] aspect-video w-full max-w-lg overflow-hidden rounded-[30px] bg-black md:rounded-[60px]">
+        {/* video */}
+        <div className="relative mx-auto aspect-video h-[650px] w-full max-w-lg overflow-hidden rounded-[30px] bg-black md:rounded-[60px]">
           <motion.video
             autoPlay
             muted
@@ -41,7 +41,7 @@ const Introduction = () => {
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
             <source src="/videos/BoostAnimation.mp4" type="video/mp4" />
-            Seu navegador não suporta o elemento de vídeo.
+            video não suportado
           </motion.video>
         </div>
       </div>

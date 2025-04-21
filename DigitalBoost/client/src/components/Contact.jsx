@@ -22,7 +22,7 @@ const Contact = () => {
   return (
     <motion.section
       id="contato"
-      className="bg-white px-6 py-20 pt-32 scroll-mt-32" // <- Aqui está o ajuste
+      className="scroll-mt-32 bg-white px-6 py-20 pt-32" // <- Aqui está o ajuste
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -62,7 +62,7 @@ const Contact = () => {
           </motion.p>
         )}
 
-        <div className="bg-gray-50 p-8 rounded-2xl shadow-xl">
+        <div className="rounded-2xl bg-gray-50 p-8 shadow-xl">
           <motion.form
             onSubmit={handleSubmit}
             className={`grid gap-6 text-left ${
@@ -83,7 +83,7 @@ const Contact = () => {
               >
                 <label
                   htmlFor={field}
-                  className="block text-sm font-semibold text-gray-700 mb-1"
+                  className="mb-1 block text-sm font-semibold text-gray-700"
                 >
                   {field === "name"
                     ? "Nome"
@@ -94,7 +94,7 @@ const Contact = () => {
 
                 <div className="relative">
                   {field !== "message" && (
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">
+                    <span className="absolute top-1/2 left-3 -translate-y-1/2 text-lg text-gray-400">
                       {field === "name" ? "👤" : "✉️"}
                     </span>
                   )}
@@ -117,7 +117,7 @@ const Contact = () => {
                       value={form[field]}
                       onChange={handleChange}
                       required
-                      className="mt-1 block w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 py-3 text-sm shadow-sm transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                      className="mt-1 block w-full rounded-xl border border-gray-200 bg-white py-3 pr-4 pl-10 text-sm shadow-sm transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                     />
                   )}
                 </div>

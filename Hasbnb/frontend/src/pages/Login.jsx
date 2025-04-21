@@ -12,10 +12,10 @@ const Login = ({ user, setUser }) => {
 
     if (email && password) {
       try {
-        const { data: userDoc } = await axios.post("/users/login", {
+        const { data: userDoc } = await axios.post("http://localhost:3000/users/login", {
           email,
           password,
-        });
+        }, {withCredentials: true});
         console.log(userDoc);
         setUser(userDoc);
         setRedirect(true);
