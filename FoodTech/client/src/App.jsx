@@ -1,26 +1,16 @@
-import Navbar from "./components/Navbar";
 import React from "react";
-import Home from "./components/Home";
-import Challenge from "./components/Challenge";
-import About from "./components/About";
-import PageTransition from "./components/PageTransition";
-import Services from "./components/Services";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer"; 
-import Solution from "./components/Solution";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
-    <PageTransition>
-      <Navbar />
-      <Home />
-      <About />
-      <Challenge />
-      <Solution />
-      <Services />
-      <Testimonials />
-      <Footer />
-    </PageTransition>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contato" element={<ContactPage />} />
+      </Routes>
+    </Router>
   );
 }
 
