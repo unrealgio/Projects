@@ -29,31 +29,30 @@ const testimonials = [
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i) => {
-    return {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    };
-  },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
 };
 
 const Testimonials = () => {
   return (
-    <section id="depoimentos" className="bg-[#000A26] px-6 py-20">
+    <section id="depoimentos" className="bg-[#000A26] px-4 py-12 sm:py-16 sm:px-6 lg:px-20 text-white">
       <div className="mx-auto max-w-7xl text-center">
-        <h2 className="mb-4 text-3xl font-bold text-[#FEBD00]">
+        <h2 className="mb-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-[#FEBD00]">
           O que nossos clientes dizem!
         </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-gray-300">
+        <p className="mx-auto mb-12 max-w-md sm:max-w-xl text-sm sm:text-base text-gray-300">
           Histórias reais de pessoas que elevaram seus negócios com a Digital Boost.
         </p>
 
-        <div className="mb-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Cards de Depoimentos */}
+        <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -65,27 +64,29 @@ const Testimonials = () => {
               variants={cardVariants}
             >
               {/* Estrelas no topo */}
-              <div className="mb-3 flex gap-1 text-yellow-400">
+              <div className="mb-3 flex gap-1 justify-center text-yellow-400">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="currentColor" strokeWidth={0} />
+                  <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
 
+              {/* Informação do Usuário */}
               <div className="mb-4 flex items-center gap-4">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="h-14 w-14 rounded-full object-cover"
+                  className="h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover"
                 />
                 <div className="text-left">
-                  <p className="font-semibold text-gray-800">
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">{testimonial.role}</p>
                 </div>
               </div>
 
-              <p className="text-sm text-gray-600 italic">
+              {/* Comentário */}
+              <p className="text-xs sm:text-sm text-gray-600 italic">
                 "{testimonial.comment}"
               </p>
             </motion.div>
@@ -93,13 +94,13 @@ const Testimonials = () => {
         </div>
 
         {/* Seção CTA */}
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 rounded-2xl bg-[#FEBD00] px-6 py-12 text-[#3C0142] lg:flex-row">
-          <h3 className="text-center text-4xl font-extrabold leading-tight lg:text-left">
+        <div className="mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 p-6 rounded-2xl bg-[#FEBD00] text-[#3C0142]">
+          <h3 className="text-center text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight">
             Transforme o seu negócio <br /> com a Digital Boost! 🚀
           </h3>
 
-          <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
-            <p className="max-w-md text-lg text-[white]">
+          <div className="flex flex-col items-center lg:items-start gap-4">
+            <p className="text-sm sm:text-base max-w-md text-center lg:text-left">
               Não fique para trás! Descubra como podemos ajudar a elevar o seu restaurante ou negócio gastronômico.
             </p>
 
@@ -107,7 +108,7 @@ const Testimonials = () => {
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 font-semibold text-[#3C0142] transition hover:text-[#0142FF]"
             >
-              <ArrowRight className="h-7 w-7 rounded-full cursor-pointer bg-[#3C0142] p-1 text-[#FEBD00]" />
+              <ArrowRight className="h-6 w-6 rounded-full cursor-pointer bg-[#3C0142] p-1 text-[#FEBD00]" />
               <Link to="/contato">Fale Conosco!</Link>
             </motion.button>
           </div>

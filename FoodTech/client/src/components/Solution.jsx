@@ -4,31 +4,36 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     id: 1,
-    image: "https://img.freepik.com/fotos-gratis/cafeteria-com-efeito-borrado_23-2148164705.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
+    image:
+      "https://img.freepik.com/fotos-gratis/cafeteria-com-efeito-borrado_23-2148164705.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
     title: "Eficiência",
     subtitle: "Reduza desperdícios e otimize sua operação.",
   },
   {
     id: 2,
-    image: "https://img.freepik.com/fotos-gratis/borrao-de-luz-do-cliente-pessoas-estilo-de-vida_1203-4032.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
+    image:
+      "https://img.freepik.com/fotos-gratis/borrao-de-luz-do-cliente-pessoas-estilo-de-vida_1203-4032.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
     title: "Identidade",
     subtitle: "Construa uma marca forte e reconhecida.",
   },
   {
     id: 3,
-    image: "https://img.freepik.com/fotos-gratis/lampadas-penduradas-no-teto_1203-805.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
+    image:
+      "https://img.freepik.com/fotos-gratis/lampadas-penduradas-no-teto_1203-805.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
     title: "Crescimento",
     subtitle: "Atraia mais clientes e aumente as vendas.",
   },
   {
     id: 4,
-    image: "https://img.freepik.com/fotos-gratis/abstratos-blur-cafe-loja_1203-8295.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
+    image:
+      "https://img.freepik.com/fotos-gratis/abstratos-blur-cafe-loja_1203-8295.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
     title: "Decisão Estratégica",
     subtitle: "Use dados reais para tomar decisões certeiras.",
   },
   {
     id: 5,
-    image: "https://img.freepik.com/fotos-gratis/restaurante-turva-em-shopping_1258-1.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
+    image:
+      "https://img.freepik.com/fotos-gratis/restaurante-turva-em-shopping_1258-1.jpg?uid=R195674881&ga=GA1.1.197243129.1744348516&semt=ais_hybrid&w=740",
     title: "Engajamento",
     subtitle: "Conecte-se com seu público e fidelize clientes.",
   },
@@ -58,7 +63,10 @@ const Solution = () => {
   }, []);
 
   return (
-    <section id="solution" className="relative h-[800px] w-full overflow-hidden">
+    <section
+      id="solution"
+      className="relative h-[600px] sm:h-[700px] lg:h-[800px] w-full overflow-hidden"
+    >
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -75,11 +83,13 @@ const Solution = () => {
           {/* Camada Opaca */}
           <div className="absolute inset-0 bg-[#00000073] bg-opacity-50"></div>
           {/* Texto Centralizado */}
-          <div className="relative z-20 flex h-full flex-col items-center justify-center text-center text-white px-6">
-            <h2 className="text-5xl font-extrabold mb-4 drop-shadow-lg">
+          <div className="relative z-20 flex h-full flex-col items-center justify-center text-center text-white px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 drop-shadow-lg">
               {slide.title}
             </h2>
-            <p className="text-xl max-w-2xl drop-shadow-md">{slide.subtitle}</p>
+            <p className="text-sm sm:text-lg lg:text-xl max-w-md sm:max-w-lg drop-shadow-md">
+              {slide.subtitle}
+            </p>
           </div>
         </div>
       ))}
@@ -87,17 +97,17 @@ const Solution = () => {
       {/* Botões de Navegação */}
       <button
         onClick={handlePrev}
-        className="absolute left-10 top-1/2 transform -translate-y-1/2 bg-[#FEBD00] bg-opacity-80 text-white p-4 rounded-full hover:bg-opacity-100 transition z-20 hover:scale-110 hover:bg-[#000A26] hover:border hover:border-[#FEBD00] cursor-pointer hidden md:block"
+        className="absolute left-4 sm:left-10 top-1/2 transform -translate-y-1/2 bg-[#FEBD00] bg-opacity-80 text-white p-3 sm:p-4 rounded-full hover:bg-opacity-100 transition z-20 hover:scale-110 hover:bg-[#000A26] hover:border hover:border-[#FEBD00] cursor-pointer hidden sm:block"
         aria-label="Slide anterior"
       >
-        <ChevronLeft size={28} />
+        <ChevronLeft size={24} />
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-10 top-1/2 transform -translate-y-1/2 bg-[#FEBD00] bg-opacity-80 text-white p-4 rounded-full hover:bg-opacity-100 transition z-20 hover:scale-110 hover:bg-[#000A26] hover:border hover:border-[#FEBD00] cursor-pointer hidden md:block"
+        className="absolute right-4 sm:right-10 top-1/2 transform -translate-y-1/2 bg-[#FEBD00] bg-opacity-80 text-white p-3 sm:p-4 rounded-full hover:bg-opacity-100 transition z-20 hover:scale-110 hover:bg-[#000A26] hover:border hover:border-[#FEBD00] cursor-pointer hidden sm:block"
         aria-label="Próximo slide"
       >
-        <ChevronRight size={28} />
+        <ChevronRight size={24} />
       </button>
 
       {/* Indicadores de Progresso */}
@@ -105,7 +115,7 @@ const Solution = () => {
         {slides.map((_, index) => (
           <div
             key={index}
-            className={`h-3 w-3 rounded-full ${
+            className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full ${
               index === currentSlide ? "bg-[#FEBD00]" : "bg-gray-300"
             }`}
           ></div>

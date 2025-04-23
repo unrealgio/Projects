@@ -37,32 +37,32 @@ const Navbar = () => {
           : "bg-[#ffffff00] text-white"
       }`}
     >
-      {/* whatsApp icon */}
+      {/* WhatsApp Icon */}
       <a
         href="https://wa.me/558481734763"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed right-6 bottom-6 z-50 flex items-center justify-center gap-1 rounded-full bg-green-500 px-3 py-3 text-center font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-green-600"
+        className="fixed right-4 bottom-4 z-50 flex items-center justify-center gap-1 rounded-full bg-green-500 px-3 py-3 text-center font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-green-600 md:right-6 md:bottom-6"
       >
         <FaWhatsapp className="text-2xl" />
-        Quero vender mais agora!
+        <span className="hidden md:inline">Quero vender mais agora!</span>
       </a>
 
       <nav className="max-w-8xl relative mx-auto flex h-[80px] items-center justify-center px-4 sm:px-6 lg:px-8">
-        {/* logo */}
+        {/* Logo */}
         <RouterLink
           to="/"
-          className={`absolute left-5 flex items-center text-2xl font-bold ${
+          className={`absolute left-5 flex items-center text-lg sm:text-2xl font-bold ${
             isScrolled ? "text-[#FEBD00]" : "text-white"
           }`}
         >
-          <img className="w-12" src="/img/logo.png" alt="Logo Digital Boost" />
+          <img className="w-8 sm:w-12" src="/img/logo.png" alt="Logo Digital Boost" />
           <span className="p-2 font-bold">Digital Boost</span>
         </RouterLink>
 
-        {/* menu */}
+        {/* Menu */}
         <ul
-          className={`absolute left-1/2 hidden -translate-x-1/2 space-x-10 font-medium md:flex ${
+          className={`absolute left-1/2 hidden -translate-x-1/2 space-x-6 sm:space-x-10 font-medium md:flex ${
             isScrolled ? "text-[#FEBD00]" : "text-white"
           }`}
         >
@@ -94,7 +94,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* botão fale com a gente */}
+        {/* Botão Fale com a Gente */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
@@ -113,7 +113,7 @@ const Navbar = () => {
           </RouterLink>
         </motion.div>
 
-        {/* Botão mobile menu */}
+        {/* Botão Mobile Menu */}
         <button
           onClick={toggleMenu}
           className="absolute right-4 text-gray-700 transition duration-300 md:hidden"
@@ -122,7 +122,7 @@ const Navbar = () => {
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* menu mobile */}
+        {/* Menu Mobile */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
