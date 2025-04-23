@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaAward, FaProjectDiagram, FaHandshake } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
     <section id="about" className="bg-[#dadada] py-12 px-4 sm:py-16 sm:px-6 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Imagem */}
+        {/* imagem */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -20,7 +21,7 @@ const About = () => {
           />
         </motion.div>
 
-        {/* Conteúdo */}
+        {/* conteúdo */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -40,15 +41,18 @@ const About = () => {
             entregamos inteligência. Combinamos dados, branding e automação para
             transformar restaurantes em negócios digitais de alto desempenho.
           </p>
-          <button className="inline-block w-full sm:w-auto cursor-pointer bg-[#000A26] text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300 hover:scale-105 hover:bg-[#0142FF]">
+          <Link
+            to="/contato"
+            className="inline-block w-full sm:w-auto cursor-pointer bg-[#000A26] text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300 hover:scale-105 hover:bg-[#0142FF]"
+          >
             Vamos conversar?
-          </button>
+          </Link>
         </motion.div>
       </div>
 
-      {/* Cards */}
+      {/* cards */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {/* Card 1 */}
+        {/* card 1 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +67,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Card 2 */}
+        {/* card 2 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +82,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Card 3 */}
+        {/* card 3 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

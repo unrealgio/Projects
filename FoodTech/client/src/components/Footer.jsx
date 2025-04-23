@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-[#000A26] to-[#FEBD00] px-6 py-10 text-white">
       <div className="mx-auto max-w-screen-lg flex flex-col justify-between gap-8 md:flex-row">
-        {/* Sobre Nós */}
+        {/* about us */}
         <div className="flex-1">
           <div className="flex items-center gap-3">
             <img
@@ -21,7 +21,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Links Rápidos */}
+        {/* fast links */}
         <div>
           <h3 className="mb-3 text-lg font-semibold text-[#FEBD00]">Links Rápidos</h3>
           <ul className="space-y-2 text-sm">
@@ -43,7 +43,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Redes Sociais */}
+        {/* social */}
         <div>
           <h3 className="mb-3 text-lg font-semibold text-[#FEBD00]">Siga-nos</h3>
           <div className="flex gap-4">
@@ -72,14 +72,14 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* copyright */}
       <div className="mt-8 text-center text-xs text-[#000A26]">
         © {new Date().getFullYear()} Digital Boost. Todos os direitos
         reservados. <br />
         <span className="text-[white]">Desenvolvido por Giovanni Felipe</span>
       </div>
 
-      {/* Botão de Voltar ao Topo */}
+      {/* botão de voltar pro inicio */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="fixed bottom-4 left-4 bg-[#000a26] text-[#FEBD00] p-3 rounded-full shadow-lg cursor-pointer hover:bg-[#0142FF] hover:text-white transition z-50"

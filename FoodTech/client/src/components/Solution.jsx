@@ -42,23 +42,22 @@ const slides = [
 const Solution = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Função para avançar para o próximo slide
+  // proximo slide
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
-  // Função para voltar para o slide anterior
+  // slide anterior
   const handlePrev = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // Autoplay para dispositivos móveis
+  // autoplay mobile
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 5000); // Alterne os slides a cada 5 segundos
+    }, 4000); 
 
-    // Limpe o intervalo quando o componente for desmontado
     return () => clearInterval(interval);
   }, []);
 
@@ -75,7 +74,7 @@ const Solution = () => {
             index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          {/* Imagem de Fundo */}
+          {/* imagem de fundo */}
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
@@ -94,7 +93,7 @@ const Solution = () => {
         </div>
       ))}
 
-      {/* Botões de Navegação */}
+      {/* botão de navegação */}
       <button
         onClick={handlePrev}
         className="absolute left-4 sm:left-10 top-1/2 transform -translate-y-1/2 bg-[#FEBD00] bg-opacity-80 text-white p-3 sm:p-4 rounded-full hover:bg-opacity-100 transition z-20 hover:scale-110 hover:bg-[#000A26] hover:border hover:border-[#FEBD00] cursor-pointer hidden sm:block"
@@ -110,7 +109,7 @@ const Solution = () => {
         <ChevronRight size={24} />
       </button>
 
-      {/* Indicadores de Progresso */}
+      {/* indicador de progresso */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
         {slides.map((_, index) => (
           <div

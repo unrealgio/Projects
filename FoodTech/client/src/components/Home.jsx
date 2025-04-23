@@ -37,7 +37,7 @@ const Home = () => {
           Escolha seu cardápio!
         </motion.a>
 
-        {/* imagem devices */}
+        {/* imagem dispositivos */}
         <div className="mt-8 sm:mt-12">
           <img
             src="/img/devices.png"

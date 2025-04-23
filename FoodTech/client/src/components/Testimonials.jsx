@@ -51,7 +51,7 @@ const Testimonials = () => {
           Histórias reais de pessoas que elevaram seus negócios com a Digital Boost.
         </p>
 
-        {/* Cards de Depoimentos */}
+        {/* cards */}
         <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -63,7 +63,7 @@ const Testimonials = () => {
               viewport={{ once: true }}
               variants={cardVariants}
             >
-              {/* Estrelas no topo */}
+              {/* estrelas icone */}
               <div className="mb-3 flex gap-1 justify-center text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
@@ -93,7 +93,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Seção CTA */}
+        {/* CTA */}
         <div className="mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 p-6 rounded-2xl bg-[#FEBD00] text-[#3C0142]">
           <h3 className="text-center text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight">
             Transforme o seu negócio <br /> com a Digital Boost! 🚀

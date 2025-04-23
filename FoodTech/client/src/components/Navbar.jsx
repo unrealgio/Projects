@@ -12,7 +12,7 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  // efeito de rolagem para mudar a cor do cabeçalho
+  // efeito de rolagem para mudar a cor do bg da navbar
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -37,7 +37,7 @@ const Navbar = () => {
           : "bg-[#ffffff00] text-white"
       }`}
     >
-      {/* WhatsApp Icon */}
+      {/* icone whatsapp */}
       <a
         href="https://wa.me/558481734763"
         target="_blank"
@@ -49,7 +49,7 @@ const Navbar = () => {
       </a>
 
       <nav className="max-w-8xl relative mx-auto flex h-[80px] items-center justify-center px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
+        {/* logo */}
         <RouterLink
           to="/"
           className={`absolute left-5 flex items-center text-lg sm:text-2xl font-bold ${
@@ -60,7 +60,7 @@ const Navbar = () => {
           <span className="p-2 font-bold">Digital Boost</span>
         </RouterLink>
 
-        {/* Menu */}
+        {/* menu */}
         <ul
           className={`absolute left-1/2 hidden -translate-x-1/2 space-x-6 sm:space-x-10 font-medium md:flex ${
             isScrolled ? "text-[#FEBD00]" : "text-white"
@@ -94,7 +94,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Botão Fale com a Gente */}
+        {/* botão fale com a gente*/}
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
@@ -113,7 +113,7 @@ const Navbar = () => {
           </RouterLink>
         </motion.div>
 
-        {/* Botão Mobile Menu */}
+        {/* botão mobile menu */}
         <button
           onClick={toggleMenu}
           className="absolute right-4 text-gray-700 transition duration-300 md:hidden"
@@ -122,7 +122,7 @@ const Navbar = () => {
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Menu Mobile */}
+        {/* menu mobile */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div

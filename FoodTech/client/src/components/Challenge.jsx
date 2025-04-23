@@ -8,7 +8,7 @@ const Challenge = () => {
       className="bg-gradient-to-b from-[#000A26] to-[#FEBD00] text-white py-12 px-4 sm:py-16 sm:px-6 lg:px-20"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Título e Conteúdo */}
+        {/* título */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -21,6 +21,7 @@ const Challenge = () => {
                 Restaurantes no Brasil
               </span>
             </h2>
+            {/* conteúdo */}
             <p className="text-base sm:text-lg leading-relaxed mb-4">
               A paixão pela gastronomia não basta quando os{" "}
               <span className="text-[#FEBD00] font-semibold">números</span>{" "}
@@ -44,7 +45,7 @@ const Challenge = () => {
             </p>
           </motion.div>
 
-          {/* Imagem */}
+          {/* imagem */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,9 +60,9 @@ const Challenge = () => {
           </motion.div>
         </div>
 
-        {/* Cards */}
+        {/* cards */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {/* Card 1 */}
+          {/* card 1 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +82,7 @@ const Challenge = () => {
             </div>
           </motion.div>
 
-          {/* Card 2 */}
+          {/* card 2 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +102,7 @@ const Challenge = () => {
             </div>
           </motion.div>
 
-          {/* Card 3 */}
+          {/* card 3 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
