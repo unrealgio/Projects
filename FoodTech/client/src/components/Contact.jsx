@@ -150,7 +150,7 @@ const Contact = () => {
             {/* botão de enviar */}
             <button
               type="submit"
-              className="w-full bg-[#FEBD00] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#0142FF] transition"
+              className="w-full bg-[#FEBD00] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#0142FF] transition cursor-pointer"
             >
               ENVIAR
             </button>
