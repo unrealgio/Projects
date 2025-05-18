@@ -7,7 +7,7 @@ import PageTransition from "../components/PageTransition";
 import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
-import Solution from "../components/Solution";
+
 
 function HomePage() {
   return (
@@ -16,7 +16,6 @@ function HomePage() {
       <Home />
       <About />
       <Challenge />
-      <Solution />
       <Services />
       <Testimonials />
       <Footer />

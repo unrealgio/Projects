@@ -14,7 +14,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="bg-[#3C0142] py-16 px-6 md:px-12 lg:px-20 text-white"
+      className="bg-[#00173F] py-16 px-6 md:px-12 lg:px-20 text-white"
     >
       <div className="max-w-screen-lg mx-auto">
         {/* título */}
@@ -33,10 +33,10 @@ const Services = () => {
           {/* card 1 */}
           <motion.div
             whileHover={{ scale: 1.05, rotate: 3 }}
-            className="bg-white text-[#3C0142] p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-transparent hover:border-[#FEBD00]"
+            className="bg-white text-[#00173F] p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-transparent hover:border-[#FEBD00]"
           >
             <div className="flex flex-col items-center text-center">
-              <SiMicrostrategy className="text-4xl text-[#3C0142] mb-4" />
+              <SiMicrostrategy className="text-4xl text-[#0142FF] mb-4" />
               <h4 className="text-xl font-semibold mb-2">
                 Consultoria Estratégica
               </h4>
@@ -50,7 +50,7 @@ const Services = () => {
           {/* card 2 */}
           <motion.div
             whileHover={{ scale: 1.05, rotate: 3 }}
-            className="bg-[#3C0142] text-white p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-[#FEBD00]"
+            className="bg-[#00173F] text-white p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-[#FEBD00]"
           >
             <div className="flex flex-col items-center text-center">
               <FaLightbulb className="text-4xl text-[#FEBD00] mb-4" />
@@ -66,10 +66,10 @@ const Services = () => {
           {/* card 3 */}
           <motion.div
             whileHover={{ scale: 1.05, rotate: 3 }}
-            className="bg-white text-[#3C0142] p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-transparent hover:border-[#FEBD00]"
+            className="bg-white text-[#00173F] p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-transparent hover:border-[#FEBD00]"
           >
             <div className="flex flex-col items-center text-center">
-              <MdRestaurantMenu className="text-4xl text-[#3C0142] mb-4" />
+              <MdRestaurantMenu className="text-4xl text-[#0142FF] mb-4" />
               <h4 className="text-xl font-semibold mb-2">Cardápio Digital</h4>
               <p className="text-gray-700">
                 Atualize seu menu em tempo real, reduza custos e ofereça uma
@@ -81,7 +81,7 @@ const Services = () => {
           {/* card 4 */}
           <motion.div
             whileHover={{ scale: 1.05, rotate: 3 }}
-            className="bg-[#3C0142] text-white p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-[#FEBD00]"
+            className="bg-[#00173F] text-white p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-[#FEBD00]"
           >
             <div className="flex flex-col items-center text-center">
               <MdDashboard className="text-4xl text-[#FEBD00] mb-4" />
@@ -98,10 +98,10 @@ const Services = () => {
           {/* card 5 */}
           <motion.div
             whileHover={{ scale: 1.05, rotate: 3 }}
-            className="bg-white text-[#3C0142] p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-transparent hover:border-[#FEBD00]"
+            className="bg-white text-[#00173F] p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-transparent hover:border-[#FEBD00]"
           >
             <div className="flex flex-col items-center text-center">
-              <FaChartBar className="text-4xl text-[#3C0142] mb-4" />
+              <FaChartBar className="text-4xl text-[#0142FF] mb-4" />
               <h4 className="text-xl font-semibold mb-2">
                 Marketing Digital & Gestão de Tráfego
               </h4>
@@ -115,7 +115,7 @@ const Services = () => {
           {/* card 6 */}
           <motion.div
             whileHover={{ scale: 1.05, rotate: 3 }}
-            className="bg-[#3C0142] text-white p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-[#FEBD00]"
+            className="bg-[#00173F] text-white p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 border-2 border-[#FEBD00]"
           >
             <div className="flex flex-col items-center text-center">
               <FaHandshake className="text-4xl text-[#FEBD00] mb-4" />

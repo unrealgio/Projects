@@ -3,16 +3,38 @@ import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const navigate = useNavigate();
-  const [submitted, setSubmitted] = useState(false); // Estado para controlar a mensagem de confirmação
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Estados para os campos do formulário
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // Atualiza os campos conforme o usuário digita
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Envia os dados para o backend
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    await fetch("http://localhost:5000/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
     setSubmitted(true);
-
     setTimeout(() => {
       navigate("/");
     }, 4000);
-  };
+  } catch (error) {
+    alert("Erro ao enviar mensagem. Tente novamente.", error);
+  }
+};
 
   return (
     <section
@@ -20,7 +42,7 @@ const Contact = () => {
       className="relative h-auto md:h-[1000px] w-full bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-7c10-61f7-8dd3-c77ff989bcc1/raw?se=2025-04-23T20%3A09%3A47Z&sp=r&sv=2024-08-04&sr=b&scid=9394041d-6e97-502c-a0e2-65133883f1fd&skoid=2f36945c-3adc-4614-ac2b-eced8f672c58&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-23T16%3A17%3A15Z&ske=2025-04-24T16%3A17%3A15Z&sks=b&skv=2024-08-04&sig=GY3XLncJcKv29lGn6%2BN02Tn8fvWEtvzPWQJzhifsIpU%3D')",
+          "url('https://lh3.googleusercontent.com/pw/AP1GczNRR8mTAz68TdP7FPSe56-yaqjG3G6RIOkQKc8DtVKbEu-HcL9rtDUC7gozsbrY5slCyUjV0L0bunAxmIlszHCtO5HH0bcI85IflVztYg24ZmL5zwM3KYB_H8MIe5wLjpI1fquL31AZmaxpPek4CYU=w1430-h953-s-no-gm?authuser=0')",
       }}
     >
       {/* opacidade do background */}
@@ -57,6 +79,9 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   placeholder="Seu email"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FEBD00]"
                   required
@@ -73,6 +98,9 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
                   placeholder="Seu nome"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FEBD00]"
                   required
@@ -80,17 +108,20 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* endereço */}
+            {/* telefone */}
             <div className="mb-4">
               <label
-                htmlFor="address"
+                htmlFor="phone"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
                 Telefone
               </label>
               <input
-                type="Number"
-                id="address"
+                type="text"
+                id="phone"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
                 placeholder="Seu telefone para contato"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FEBD00]"
               />
@@ -106,6 +137,9 @@ const Contact = () => {
               </label>
               <textarea
                 id="message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
                 placeholder="Digite sua mensagem"
                 rows="4"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FEBD00]"
